@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<style>
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 60px 20px;
+  overflow: hidden;
+  background: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.25);
+  padding: 20px;
+  border-radius: 20px;
+
+  animation: fadeUp 1s ease;
+}
+
+.video-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  transform: translate(-50%, -50%) scale(1.2);
+  filter: blur(40px);
+  opacity: 0.7;
+
+  animation: zoomBg 20s ease-in-out infinite alternate;
+}
+@keyframes zoomBg {
+  from {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.35);
+  }
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.25);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.video-main {
+  width: 100%;
+  height: auto;
+
+  border-radius: 0;
+  display: block;
+  margin: 0;
+
+  box-shadow: none;
+}
+</style>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="2Bokjf_Z9BYb7MjrzEWU9bKrlblIgon5pVgCiCXKLT0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sa Domu de Efisia | B&B Portoscuso Sardegna</title>
+
+<meta name="description" content="B&B Sa Domu de Efisia a Portoscuso, Sardegna. Camere vista mare, relax e comfort.">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:'Lato',sans-serif;
+background:linear-gradient(to bottom,#f5f5f5,#e8f1f4);
+}
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+.hero h1{
+  font-size: 42px;
+  letter-spacing: 1px;
+}
+.hero-content{
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform: translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform: translateY(-30px);
+  }
+}
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+header{background:white;padding:20px 40px;display:flex;align-items:center;justify-content:space-between}
+header img{height:50px}
+nav a{margin:0 15px;text-decoration:none;color:#5A3B22}
+
+.hero-content{position:relative;z-index:2;text-align:center}
+
+.section{
+padding:60px 20px;
+max-width:1100px;
+margin:auto;
+
+background:linear-gradient(to bottom,#fdfaf6,#f4ece4);
+
+border:1px solid #e6d5c3;
+border-radius:18px;
+
+box-shadow:0 12px 35px rgba(90,59,34,0.10);
+
+margin-top:40px;
+}
+.section{
+  padding:60px 20px;
+  max-width:1100px;
+  margin:auto;
+  margin-top:40px;
+
+  background:linear-gradient(to bottom,#fdfaf6,#f4ece4);
+
+  border:1px solid #e6d5c3;
+  border-radius:18px;
+
+  box-shadow:0 12px 35px rgba(90,59,34,0.10);
+}
+.hero h1, .hero p{
+  text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+}
+/* ANGOLO PIÙ MORBIDO */
+border-radius:18px;
+
+/* OMBRA PROFONDA */
+box-shadow:0 12px 35px rgba(90,59,34,0.10);
+
+margin-top:40px;
+}padding:60px 20px;
+max-width:1100px;
+margin:auto;
+
+background:#f9f3ec;
+
+border:1px solid #e5d3c2;
+
+margin-top:40px;
+border-radius:16px;
+
+box-shadow:0 10px 30px rgba(90,59,34,0.08);
+}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
+
+.card img{
+  width:100%;
+  height:auto;
+  border-radius:12px;
+}
+.gallery-row{display:flex;flex-wrap:wrap;gap:5px;margin:10px}
+
+.gallery-row img{width:60px;height:60px;object-fit:cover;cursor:pointer}
+
+.lightbox{display:none;position:fixed;width:100%;height:100%;background:black;justify-content:center;align-items:center}
+.lightbox img{max-width:90%;max-height:90%}
+
+/* AUDIO */
+.audio-btn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  padding: 12px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  border: none;
+
+  background:#5A3B22;
+  z-index: 999;
+}
+
+/* WHATSAPP */
+.wa-btn{
+  position: fixed;
+  bottom: 80px; /* 👈 più alto per non sovrapporsi */
+  right: 20px;
+
+  background:#25D366;
+  color:white;
+  text-decoration:none;
+
+  padding: 12px 16px;
+  border-radius: 50px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  z-index: 999;
+}
+
+.wa-btn:hover{
+  transform: scale(1.05);
+}footer{text-align:center;padding:30px;background:#5A3B22;color:white;margin-top:40px}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="Logo.png">
+<h2>Sa Domu de Efisia</h2>
+<nav>
+<a href="#rooms">Camere</a>
+<a href="#prezzi">Prezzi</a>
+<a href="#blog">Guida</a>
+<a href="#contatti">Contatti</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<audio loop id="audio">
+  <source src="suono-mare.mp3" type="audio/mpeg">
+</audio>
+
+<!-- VIDEO SFONDO -->
+<video class="video-bg" autoplay muted loop playsinline>
+  <source src="video.mp4" type="video/mp4">
+</video>
+
+<!-- OVERLAY -->
+<div class="overlay"></div>
+
+<!-- CONTENUTO -->
+<div class="hero-content">
+
+  <video class="video-main" autoplay muted loop playsinline>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+
+  <h1>Sa Domu de Efisia</h1>
+  <p>B&B autentico a Portoscuso, Sardegna</p>
+
+  <p style="margin-top:10px;font-size:14px;">
+    📍 Via Giulio Cesare 29 - Portoscuso<br>
+    📞 349 646 9469
+  </p>
+
+  <p style="font-size:12px;">
+    CIN: IT111057C2000T9677
+  </p>
+
+</div>
+
+</section>
+<button class="audio-btn" onclick="toggleAudio()">🌊 Audio</button>
+<a class="wa-btn" 
+href="https://wa.me/393496469469?text=Ciao%20vorrei%20prenotare%20al%20Sa%20Domu%20de%20Efisia" 
+target="_blank">
+💬 Prenota ora
+</a>
+<!-- CAMERE -->
+<section class="section" id="rooms">
+
+<h2>Camere</h2>
+
+<div class="cards">
+
+<!-- LA CORTE -->
+<div class="card">
+<img src="images/la-corte-stile-retro3.jpg" onclick="openLightbox(this)">
+
+<div class="gallery-row">
+<img src="images/la-corte-stile-retro1.jpg" onclick="openLightbox(this)">
+<img src="images/la-corte-stile-retro2.jpg" onclick="openLightbox(this)">
+<img src="images/la-corte-stile-retro3.jpg" onclick="openLightbox(this)">
+<img src="images/la-corte-stile-retro4.jpg" onclick="openLightbox(this)">
+</div>
+<h3 style="color:#8B5E3C;">Appartamento La Corte – Stile Retrò</h3>
+
+<p style="padding:0 10px 10px 10px; line-height:1.6;">
+Un appartamento dal fascino senza tempo, dove lo stile retrò incontra il calore della tradizione sarda.
+Arredi vintage, dettagli curati e un’atmosfera intima creano un ambiente accogliente e rilassante.
+Perfetto per chi desidera vivere un soggiorno autentico, tra memoria e comfort, nel cuore di Portoscuso.
+</p>
+</div>
+
+<!-- BLU MARE -->
+<div class="card">
+<img src="images/vista-mare-terrazza.jpg" onclick="openLightbox(this)">
+
+<div class="gallery-row">
+<img src="images/vista-mare2.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare3.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare4.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare5.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare6.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare7.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare8.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare9.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare10.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare11.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare12.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare13.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare14.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare15.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare16.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare17.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare18.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare19.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare20.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare21.jpg" onclick="openLightbox(this)">
+<img src="images/vista-mare22.jpg" onclick="openLightbox(this)">
+</div>
+
+<h3 style="color:#3E6A8E;">Appartamento Vista Mare – Blu Mare</h3>
+
+<p style="padding:0 10px 10px 10px; line-height:1.6;">
+Un appartamento luminoso e raffinato con vista sul mare, dove ogni dettaglio richiama i colori e la calma della costa.
+Gli spazi ampi e accoglienti, uniti alla luce naturale, regalano una sensazione di relax totale.
+Ideale per chi desidera svegliarsi con il profumo del mare e godere di tramonti indimenticabili.
+</p>
+</div>
+
+<!-- VERDE VIVO -->
+<div class="card">
+<img src="images/camera-verde-letto.jpg" onclick="openLightbox(this)">
+
+<div class="gallery-row">
+<img src="images/camera-bagno-privato1.jpg" onclick="openLightbox(this)">
+<img src="images/camera-bagno-privato2.jpg" onclick="openLightbox(this)">
+<img src="images/camera-bagno-privato3.jpg" onclick="openLightbox(this)">
+<img src="images/camera-bagno-privato4.jpg" onclick="openLightbox(this)">
+<img src="images/camera-bagno-privato5.jpg" onclick="openLightbox(this)">
+<img src="images/camera-bagno-privato6.jpg" onclick="openLightbox(this)">
+<img src="images/camera-bagno-privato7.jpg" onclick="openLightbox(this)">
+<img src="images/camera-bagno-privato8.jpg" onclick="openLightbox(this)">
+<img src="images/camera-bagno-privato9.jpg" onclick="openLightbox(this)">
+<img src="images/camera-bagno-privato10.jpg" onclick="openLightbox(this)">
+<img src="images/camera-bagno-privato11.jpg" onclick="openLightbox(this)">
+</div>
+
+<h3 style="color:#4CAF50;">Camera Privata – Verde Vivo</h3>
+
+<p style="padding:0 10px 10px 10px; line-height:1.6;">
+Una camera accogliente e curata nei dettagli, caratterizzata da tonalità naturali e rilassanti.
+L’atmosfera è intima e tranquilla, perfetta per una pausa rigenerante dopo una giornata tra mare e natura.
+Ideale per coppie o viaggiatori in cerca di comfort e semplicità.
+</p>
+</div>
+
+</div>
+</section><!-- PREZZI -->
+<section class="section" id="prezzi">
+<h2>Prezzi</h2>
+<p>Appartamento Vista Mare: da 90€</p>
+<p>Camera Privata: da 60€</p>
+</section>
+
+<section class="section reveal">
+
+<h2>La nostra storia</h2>
+
+<p style="font-style:italic; margin-bottom:20px; line-height:1.6;">
+Qui custodiamo storie che affondano le radici nel tempo.<br>
+Ogni gesto, ogni dettaglio, ogni scelta nasce dal rispetto per le tradizioni antiche,<br>
+tramandate con cura e rinnovate con passione.
+</p>
+
+<p>
+A pochi passi dal mare di Portoscuso, tra i profumi di salsedine e il canto del vento di maestrale,
+sorgeva una piccola casa che custodiva storie antiche e preziose: <strong>Sa Domu de Efisia</strong>.
+</p>
+
+<p>
+Il paese, noto per le sue tonnare e per il legame profondo con il mare, è sempre stato un luogo di lavoro,
+di accoglienza e di tradizioni tramandate di generazione in generazione.
+</p>
+
+<p>
+La casa appartenne a Efisia, la nonna di mia madre Rosanna, figlia di Costantino,
+una donna nata nell’Ottocento, di quelle che sapevano unire la dolcezza alla forza.
+</p>
+
+<p>
+Efisia si sposò giovanissima con Ambrogio Biggio,
+uno dei primi elettricisti impegnati nella costruzione delle prime reti elettriche della Sardegna.
+Sa Domu de Efisia era come un faro sul mare.
+</p>
+
+<p>
+Efisia e Ambrogio ebbero cinque figli: Adolfo, Mario, Antonino, Filomena e Costantino,
+il nonno dell’attuale proprietario.
+Tra quelle mura semplici ma piene di vita si intrecciavano risate e racconti di mare,
+mentre dalle finestre si scorgeva il lento lavoro dei pescatori nelle tonnare.
+</p>
+
+<p>
+Oggi quella stessa casa rivive come B&B, per accogliere nuovi viaggiatori con lo stesso calore di un tempo.
+Sa Domu de Efisia non è solo un luogo dove dormire, ma una casa dove il passato illumina il presente,
+e dove ogni ospite diventa parte di una storia lunga più di un secolo.
+</p>
+
+<p>
+Oggi Sa Domu de Efisia appartiene a me, <strong>Flavio</strong>,
+e con rispetto e gratitudine ho voluto restituirle la vita che merita.
+</p>
+
+<p>
+Qui il tempo rallenta.<br>
+Il mare canta ancora sotto le finestre.<br>
+E il passato diventa parte del viaggio.
+</p>
+
+<p><em>
+Perché alcune case non si possiedono: si custodiscono.
+</em></p>
+
+<p style="margin-top:20px;">
+<strong>Benvenuti a Portoscuso, benvenuti a Sa Domu de Efisia.</strong><br>
+Radici, mare e memoria nel cuore del Sulcis.
+</p>
+
+</section>
+
+<!-- BLOG -->
+<section class="section" id="blog">
+
+<h2 style="text-align:center;">Le spiagge più belle di Portoscuso</h2>
+
+<p style="text-align:center; max-width:700px; margin:auto;">
+Portoscuso, affacciato sulla costa sud-occidentale della Sardegna, è una destinazione autentica
+dove il mare è protagonista assoluto. Qui le spiagge conservano ancora un’atmosfera naturale,
+lontana dal turismo di massa, perfetta per chi cerca relax, silenzio e bellezza.
+</p>
+
+<!-- GRID SPIAGGE -->
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
+">
+
+<div style="background:#fdfaf6;padding:25px;border-radius:15px;box-shadow:0 8px 20px rgba(0,0,0,0.05);border:1px solid #eadfd3;">
+<h3>🏖️ Portopaglietto</h3>
+<p>
+La spiaggia principale del paese, facilmente raggiungibile anche a piedi dal centro.
+La sabbia è fine e dorata, il fondale basso e perfetto per famiglie con bambini.
+Grazie alla sua posizione riparata è ideale anche nelle giornate ventose.
+</p>
+</div>
+
+<div style="background:#fdfaf6;padding:25px;border-radius:15px;box-shadow:0 8px 20px rgba(0,0,0,0.05);border:1px solid #eadfd3;">
+<h3>🌊 La Caletta</h3>
+<p>
+Una piccola spiaggia intima e raccolta, perfetta per chi desidera rilassarsi lontano dalla folla.
+Il mare è particolarmente limpido e i colori variano dal turchese al blu intenso.
+Un angolo ideale per leggere, riposare e godersi il silenzio.
+</p>
+</div>
+
+<div style="background:#fdfaf6;padding:25px;border-radius:15px;box-shadow:0 8px 20px rgba(0,0,0,0.05);border:1px solid #eadfd3;">
+<h3>☀️ Su Pranu</h3>
+<p>
+E' una delle zone più autentiche di Portoscuso, dove il mare incontra la memoria storica del paese.
+Oggi ospita suggestive mostre fotografiche e conserva gli antichi edifici dei pescatori, un tempo utilizzati per la preparazione delle reti dedicate alla pesca del tonno.
+
+Passeggiando tra queste strutture si respira ancora l’atmosfera della tradizione marinara, tra storie di lavoro, mare e vita quotidiana che rendono questo luogo unico e ricco di fascino.
+</p>
+</div>
+
+<div style="background:#fdfaf6;padding:25px;border-radius:15px;box-shadow:0 8px 20px rgba(0,0,0,0.05);border:1px solid #eadfd3;">
+<h3>⚓ Il Porticciolo</h3>
+<p>
+Una piccola baia suggestiva, caratterizzata da acque calme e cristalline.
+La presenza delle barche e del porto rende questo luogo molto pittoresco.
+Perfetto per una sosta rilassante,passeggiata o un aperitivo.
+</p>
+</div>
+
+</div>
+
+<!-- TESTO BLOG -->
+<div style="margin-top:40px; line-height:1.7;">
+
+<p>
+Una delle cose più belle di Portoscuso è la possibilità di cambiare spiaggia ogni giorno senza dover fare lunghi spostamenti.
+Ogni angolo della costa offre scenari diversi: sabbia dorata, scogliere, acqua trasparente e tramonti spettacolari.
+</p>
+
+<p>
+Durante il soggiorno a <strong>Sa Domu de Efisia</strong> potrai raggiungere tutte queste spiagge in pochi minuti,
+vivendo ogni giorno un’esperienza diversa tra relax, natura e mare cristallino.
+</p>
+
+<p>
+Il territorio del Sulcis Iglesiente è ancora poco conosciuto rispetto ad altre zone della Sardegna,
+e proprio per questo conserva un fascino autentico e selvaggio che conquista chiunque lo visiti.
+</p>
+
+</div>
+
+<h2 style="margin-top:50px;">Guida completa a Portoscuso</h2>
+
+<p>
+Portoscuso è un borgo marinaro ricco di storia e tradizione, legato da sempre alla pesca del tonno e alla vita sul mare.
+Passeggiando tra le sue strade si respira ancora un’atmosfera autentica, fatta di semplicità e accoglienza.
+</p>
+
+<h3>Torre Spagnola</h3>
+<p>
+Simbolo del paese, la Torre Spagnola domina il porto e racconta secoli di storia.
+Da qui si gode una vista spettacolare sul mare e sull’isola di San Pietro.
+</p>
+
+<h3>Itinerario nel Sulcis</h3>
+<p>
+Da Portoscuso puoi partire alla scoperta di uno degli itinerari più affascinanti della Sardegna:
+Porto Paglia, Nebida, Masua e il famoso Pan di Zucchero.
+</p>
+
+<iframe src="https://www.google.com/maps?q=Portoscuso%20Nebida%20Masua&output=embed" width="100%" height="400"></iframe>
+
+<h3>Come arrivare</h3>
+<p>Da Cagliari 1h – Olbia 3h – Alghero 3h30</p>
+</section>
+
+<section class="section">
+
+<!-- SEZIONE EMOZIONALE PRIMA -->
+<section class="section">
+
+<h2 style="text-align:center;">Vivi Portoscuso</h2>
+
+<p style="text-align:center; max-width:700px; margin:auto;">
+Tra storia, mare e tradizione, Portoscuso regala scenari unici da vivere ogni giorno.
+Dalla tonnara alle spiagge cristalline, ogni angolo racconta un’emozione.
+</p>
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+margin-top:30px;
+">
+
+<img src="images/tonnara-portoscuso.jpg" style="width:100%;border-radius:15px;">
+<img src="images/torre-spagnola-portoscuso.jpg" style="width:100%;border-radius:15px;">
+<img src="images/tramonto-mare.jpg" style="width:100%;border-radius:15px;">
+<img src="images/spiaggia-panorama.jpg" style="width:100%;border-radius:15px;">
+<img src="images/elica-portoscuso.jpg" style="width:100%;border-radius:15px;">
+<img src="images/vista-mare-foro.jpg" style="width:100%;border-radius:15px;"> <!-- FIX -->
+<img src="images/sottacqua.jpg" style="width:100%;border-radius:15px;">
+
+</div>
+
+</section>
+
+
+<!-- TRAGHETTO DOPO -->
+<section class="section">
+
+<h2>⛴️ Traghetto Portoscuso – Carloforte</h2>
+
+<p>
+Dal porto di Portoscuso partono ogni giorno i traghetti per Carloforte,
+sull’isola di San Pietro. La traversata dura circa 30 minuti ed è uno dei
+modi migliori per scoprire una delle perle del Sulcis.
+</p>
+
+<h3>🕒 Orari indicativi</h3>
+
+<ul>
+<li>07:30</li>
+<li>09:00</li>
+<li>11:30</li>
+<li>14:30</li>
+<li>17:00</li>
+<li>19:00</li>
+</ul>
+
+<p><em>
+Gli orari possono variare in base alla stagione. Si consiglia sempre di verificare online.
+</em></p>
+
+<h3>📍 Partenza</h3>
+<p>Porto di Portoscuso</p>
+
+<h3>🎟️ Prenotazione traghetto</h3>
+
+<a href="https://www.delcomar.it" target="_blank"
+style="display:inline-block;margin-top:15px;padding:12px 20px;background:#3E6A8E;color:white;text-decoration:none;border-radius:8px;font-weight:bold;">
+Prenota il traghetto
+</a>
+
+</section>
+<!-- CONTATTI -->
+<section class="section" id="contatti">
+
+<h2>Contatti</h2>
+
+<p>
+📍 Via Giulio Cesare 29 - Portoscuso<br>
+📞 349 646 9469
+</p>
+
+<p>🧾 CIN: IT111057C2000T9677</p>
+
+<iframe 
+src="https://www.google.com/maps?q=Via%20Giulio%20Cesare%2029%20Portoscuso&output=embed"
+width="100%" height="400">
+</iframe>
+
+</section>
+
+<div id="lightbox" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:9999;
+">
+
+<span onclick="closeLightbox()" style="position:absolute;top:20px;right:30px;font-size:30px;color:white;cursor:pointer;">✖</span>
+
+<span onclick="prevImage()" style="position:absolute;left:20px;top:50%;font-size:40px;color:white;cursor:pointer;">❮</span>
+
+<span onclick="nextImage()" style="position:absolute;right:20px;top:50%;font-size:40px;color:white;cursor:pointer;">❯</span>
+
+<img id="lightbox-img" style="max-width:90%; max-height:90%;">
+
+</div>
+<script>
+const audio = document.getElementById('audio');
+
+function toggleAudio(){
+  if(audio.paused){
+    audio.volume=0.3;
+    audio.play();
+  }else{
+    audio.pause();
+  }
+}
+
+let currentImages = [];
+let currentIndex = 0;
+
+function openLightbox(img){
+const gallery = img.closest('.card').querySelector('.gallery-row').querySelectorAll('img');
+  currentImages = Array.from(gallery);
+  currentIndex = currentImages.indexOf(img);
+
+  document.getElementById('lightbox').style.display='flex';
+  document.getElementById('lightbox-img').src = img.src;
+}
+
+function closeLightbox(){
+  document.getElementById('lightbox').style.display='none';
+}
+
+function nextImage(){
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  document.getElementById('lightbox-img').src = currentImages[currentIndex].src;
+}
+
+function prevImage(){
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  document.getElementById('lightbox-img').src = currentImages[currentIndex].src;
+}
+</script>
+
+<footer>
+<p>© Sa Domu de Efisia</p>
+<p>CIN: IT111057C2000T9677</p>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll', () => {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if(top < windowHeight - 100){
+      el.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
