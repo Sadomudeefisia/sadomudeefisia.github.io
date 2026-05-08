@@ -12,6 +12,14 @@
   <meta name="keywords" content="B&B Portoscuso, Bed and Breakfast Sardegna, affittacamere Portoscuso, Sa Domu de Efisia">
 
   <style>
+header{
+  background:white;
+  padding:20px 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+}
 .hero {
   position: relative;
   min-height: 100vh;
@@ -132,25 +140,10 @@ opacity:1;
 transform:translateY(0);
 }
 header{background:white;padding:20px 40px;display:flex;align-items:center;justify-content:space-between}
-header img{height:50px}
 nav a{margin:0 15px;text-decoration:none;color:#5A3B22}
 
 .hero-content{position:relative;z-index:2;text-align:center}
 
-.section{
-padding:60px 20px;
-max-width:1100px;
-margin:auto;
-
-background:linear-gradient(to bottom,#fdfaf6,#f4ece4);
-
-border:1px solid #e6d5c3;
-border-radius:18px;
-
-box-shadow:0 12px 35px rgba(90,59,34,0.10);
-
-margin-top:40px;
-}
 .section{
   padding:60px 20px;
   max-width:1100px;
@@ -164,31 +157,17 @@ margin-top:40px;
 
   box-shadow:0 12px 35px rgba(90,59,34,0.10);
 }
-.hero h1, .hero p{
-  text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+
+  .hero h1,
+.hero p{
+  text-shadow:0 4px 20px rgba(0,0,0,0.7);
 }
-/* ANGOLO PIÙ MORBIDO */
-border-radius:18px;
 
-/* OMBRA PROFONDA */
-box-shadow:0 12px 35px rgba(90,59,34,0.10);
-
-margin-top:40px;
-}padding:60px 20px;
-max-width:1100px;
-margin:auto;
-
-background:#f9f3ec;
-
-border:1px solid #e5d3c2;
-
-margin-top:40px;
-border-radius:16px;
-
-box-shadow:0 10px 30px rgba(90,59,34,0.08);
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
 }
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
-
 .card img{
   width:100%;
   height:auto;
@@ -246,16 +225,16 @@ box-shadow:0 10px 30px rgba(90,59,34,0.08);
 <body>
 
 <header>
-<img src="Logo.png">
-<h2>Sa Domu de Efisia</h2>
-<nav>
-<a href="#rooms">Camere</a>
-<a href="#prezzi">Prezzi</a>
-<a href="#blog">Guida</a>
-<a href="#contatti">Contatti</a>
-</nav>
-</header>
 
+  <h2>Sa Domu de Efisia</h2>
+
+  <nav>
+    <a href="#rooms">Camere</a>
+    <a href="#prezzi">Prezzi</a>
+    <a href="#blog">Guida</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+</header>
 <section class="hero">
 
 <audio loop id="audio">
@@ -408,6 +387,19 @@ Ideale per coppie o viaggiatori in cerca di comfort e semplicità.
 <section class="section reveal">
 
 <h2>La nostra storia</h2>
+<div style="text-align:center; margin:30px 0;">
+
+  <img 
+    src="logo-nuovo.png"
+    alt="Logo Sa Domu de Efisia"
+    style="
+      width:100%;
+      max-width:350px;
+      height:auto;
+    "
+  >
+
+</div>
 
 <p style="font-style:italic; margin-bottom:20px; line-height:1.6;">
 Qui custodiamo storie che affondano le radici nel tempo.<br>
