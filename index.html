@@ -245,7 +245,36 @@ function translateLanguage(lang) {
 <a href="#blog">Guida</a>
 <a href="#contatti">Contatti</a>
 
-<select onchange="translateLanguage(this.value)" style="
+<div style="display:flex;gap:10px;margin-left:20px;">
+
+<button onclick="translateLanguage('it')" style="
+border:none;
+background:none;
+cursor:pointer;
+font-size:22px;
+">
+🇮🇹
+</button>
+
+<button onclick="translateLanguage('en')" style="
+border:none;
+background:none;
+cursor:pointer;
+font-size:22px;
+">
+🇬🇧
+</button>
+
+<button onclick="translateLanguage('fr')" style="
+border:none;
+background:none;
+cursor:pointer;
+font-size:22px;
+">
+🇫🇷
+</button>
+
+</div>
 margin-left:20px;
 padding:8px;
 border-radius:8px;
