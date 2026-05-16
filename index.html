@@ -221,7 +221,17 @@ nav a{margin:0 15px;text-decoration:none;color:#5A3B22}
 }footer{text-align:center;padding:30px;background:#5A3B22;color:white;margin-top:40px}
 </style>
 </head>
+<script>
+function translateLanguage(lang) {
+  const googleTranslateUrl =
+    "https://translate.google.com/translate?sl=it&tl=" +
+    lang +
+    "&u=" +
+    encodeURIComponent(window.location.href);
 
+  window.location.href = googleTranslateUrl;
+}
+</script>
 <body>
 
 <header>
@@ -230,11 +240,23 @@ nav a{margin:0 15px;text-decoration:none;color:#5A3B22}
 
   <nav>
 <a href="eventi.html">Eventi</a>
-    <a href="#rooms">Camere</a>
-    <a href="#prezzi">Prezzi</a>
-    <a href="#blog">Guida</a>
-    <a href="#contatti">Contatti</a>
-  </nav>
+<a href="#rooms">Camere</a>
+<a href="#prezzi">Prezzi</a>
+<a href="#blog">Guida</a>
+<a href="#contatti">Contatti</a>
+
+<select onchange="translateLanguage(this.value)" style="
+margin-left:20px;
+padding:8px;
+border-radius:8px;
+border:1px solid #ccc;
+">
+<option value="it">🇮🇹 IT</option>
+<option value="en">🇬🇧 EN</option>
+<option value="fr">🇫🇷 FR</option>
+</select>
+
+</nav>
 </header>
 <section class="hero">
 
