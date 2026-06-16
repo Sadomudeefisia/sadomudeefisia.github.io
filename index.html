@@ -270,12 +270,14 @@ footer{
 @media (max-width:768px){
 
   h2{
-    font-size:32px !important;
+    font-size:28px !important;
     line-height:1.2 !important;
+    word-break:break-word;
+    overflow-wrap:break-word;
   }
 
   h3{
-    font-size:26px !important;
+    font-size:24px !important;
     line-height:1.3 !important;
   }
 
@@ -295,6 +297,7 @@ footer{
   }
 
 }
+
 
 </style>
 </head>
@@ -1657,8 +1660,11 @@ Potrai esplorare l'isola durante il giorno e rientrare a Portoscuso per goderti 
 
 <h2 id="santantioco" style="
 text-align:center;
-font-size:52px;
+font-size:clamp(32px,6vw,52px);
 margin-bottom:25px;
+line-height:1.2;
+word-break:break-word;
+overflow-wrap:break-word;
 ">
 🦩 SANT'ANTIOCO, TRA FENICOTTERI ROSA, STORIA MILLENARIA E SPIAGGE DA SOGNO
 </h2>
